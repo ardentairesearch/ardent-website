@@ -2,22 +2,24 @@
 
 The company website for [Ardent AI Research](https://ardentresearch.xyz).
 
-This repository contains the static site served at `ardentresearch.xyz`. The Testnet API lives in [agent-execution-platform](https://github.com/ardentairesearch/agent-execution-platform), and its [documentation](https://docs.ardentresearch.xyz) is maintained in [ardent-testnet-docs](https://github.com/ardentairesearch/ardent-testnet-docs).
+This repository contains the static company site served at `ardentresearch.xyz`. Jusso is our upcoming stablecoin payment workflow product on Arc. The product section illustrates an example recurring payment plan; it does not initiate payments or connect to a live wallet.
 
 ## Deployment
 
-Deploy the repository root as a static site on Vercel. No build command, framework preset, or output directory is required. The site calls `https://api.ardentresearch.xyz` for its public activity feed and links to the separate documentation site.
+Deploy the repository root as a static site on Vercel. No build command, framework preset, output directory, API credentials, or backend connection is required. Demo bookings link to https://cal.com/ardentresearch/15min. Documentation is marked coming soon.
 
 For local preview, serve this directory with any static HTTP server, for example `python3 -m http.server 4173`, then open `http://localhost:4173`. The backend does not need to be built.
 
 ## Site structure
 
-- `index.html`: company, Jusso on Arc, public Testnet, team, and Beta interest content.
-- `styles.css`: responsive layouts, light and dark themes, and reduced-motion support.
-- `site.js`: navigation, product walkthrough, public activity feed, API-key registration, and Beta form.
-- `assets/`: brand marks, protocol marks, optimized hero artwork, and locally hosted Lucide icons (license included).
+- `index.html`: our approach, Jusso payments on Arc, and a combined About section introducing the lab and team.
+- `styles.css`: a light-only theme, responsive layouts, and reduced-motion support.
+- `site.js`: navigation and progressive scroll-led payment illustrations.
+- `assets/`: brand and provider marks, optimized hero artwork, and locally hosted Lucide icons (license included).
 
-The local preview defaults to same-origin API requests. To test against an API that permits your local origin, set `window.ARDENT_API_BASE` before `site.js` loads or use the `ARDENT_API_BASE` local-storage setting. When the feed is unavailable, examples are clearly labeled Demo. Registration and Beta interest remain separate flows.
+The payment illustration advances with ordinary page scrolling, without click controls or scroll interception. All three steps remain in the document for assistive technology. Reduced motion, short viewports, and disabled JavaScript show the steps in a static sequence. Provider logos are sourced from the official Circle and Turnkey websites; see `assets/providers/SOURCES.md`. They identify the infrastructure used, not sponsorship or endorsement.
+
+The website does not collect registrations or poll the legacy Testnet activity feed.
 
 ## License
 
